@@ -2,10 +2,24 @@ article {
 	padding: 0;
 	margin: 0;
 	font-family: 'Inter', sans-serif;
-	font-size: 1.6vw;
+	font-size: 1.5vw;
 }
 
 article p {
 	margin-bottom: 1.6rem;
 	line-height: calc(calc(20 / 14) * 1.2);
+}
+article h1,h2 {
+	margin-bottom: 2rem;
+	line-height: calc(calc(20 / 14) * 1.2);
+}
+:not(pre) > code{
+    display: inline-block;
+    margin: 0;
+    padding: 0 .6em;
+    color: #9980fa;
+    background: rgba(153,128,250,.1);
+    border-radius: 2px;
+    font-feature-settings: "tnum" 1;
+    font-family: monospace;
 }

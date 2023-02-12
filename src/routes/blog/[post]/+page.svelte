@@ -1,4 +1,5 @@
 <script>
+  import "$lib/styles/prism-vsc-dark-plus.css"
   export let data
 console.log(data)
 </script>

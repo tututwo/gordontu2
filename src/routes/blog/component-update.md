@@ -21,7 +21,7 @@ TL DR:
 
 It includes those imports:
 
-```html
+```svelte
 <script>
 	import abc from "./abc.js"
   
@@ -87,7 +87,7 @@ While making data visualization using Svelte, I often want to add animation or t
 
 For example, if I want to change/update DOM elements via clicking a button, **pay attention to the console**:
 
-<iframe src="https://svelte.dev/repl/7145bafa507a4bec8d8a9adb4a3cd9b5?version=3.44.2" width="100%" height='600' title="Svelte temperature each demo"></iframe>
+<iframe src="https://svelte.dev/repl/7145bafa507a4bec8d8a9adb4a3cd9b5?version=3.44.2" class="w-[70vw] l-[-20vw]" height='600' title="Svelte temperature each demo"></iframe>
 
 `foo` and `bar` are changed to 2 and 5 respectively based on what you see in the *console*. However, when I try to log the DOM element's content, I still see the old `1+2=3`. WHY???
 
@@ -112,11 +112,11 @@ In our case:
 
 ###### A bit about `beforeUpdate()`
 
-* Watch out: lifecycle function alert:`beforeUpdate()`. Like `onMount` and other lifecycle functions, it marks a point on Svelte's working progress timeline. This point happens to be right **before DOM gets updated**. You can say it is after the 3rd step and before the 4th step above. Statements inside `beforeUpdate()` will run right before those pending state changes are about to be exectioned.
+Watch out: lifecycle function alert:`beforeUpdate()`. Like `onMount` and other lifecycle functions, it marks a point on Svelte's working progress timeline. This point happens to be right **before DOM gets updated**. You can say it is after the 3rd step and before the 4th step above. Statements inside `beforeUpdate()` will run right before those pending state changes are about to be exectioned.
 
-My take home message here is : 
+My take home message here is
 
-Code to change DOM elements + Code to be run once DOM is changed. The later code section probably won't run successfully since Svelte haven't changed the DOM yet even though code to change DOM elements is run.
+> Code to change DOM elements + Code to be run once DOM is changed. The later code section probably won't run successfully since Svelte haven't changed the DOM yet even though code to change DOM elements is run.
 
 **BUT**!
 
